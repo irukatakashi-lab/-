@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: persona-agent
+    runtime: python
+    rootDir: 페르소나
+    buildCommand: pip install -r requirements.txt
+    startCommand: python template_server.py --fact-sheet data/persona_worker.json --host 0.0.0.0 --port $PORT --name PersonaAgent
+    healthCheckPath: /health
