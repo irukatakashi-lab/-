@@ -1,0 +1,996 @@
+{
+    "session_1": {
+        "interview_date": "April 14, 2026",
+        "agents_info": {
+            "questioner": "gpt-5",
+            "extractor": "gpt-5.1",
+            "web_search": "gpt-5",
+            "evaluator": "gemini/gemini-2.5-flash"
+        },
+        "interviewee_info": {
+            "name": "PersonaAgent",
+            "baseline": null
+        },
+        "cost": {
+            "agents_cost": 0.025530750000000005,
+            "interviewee_cost": 0.0007934000000000001,
+            "environment_cost": 0.004135,
+            "tool_costs": {
+                "serper_search": 0.0,
+                "google_geocode_validate": 0.0
+            },
+            "total_cost": 0.030459150000000004
+        },
+        "duration": "1.1831389307975768 min",
+        "termination_status": "Successfully completed",
+        "history": [
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "next_agent",
+                        "content": null,
+                        "target_agent": "questioner",
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Which field(s) are your primary area(s) of work, study, or regular activities? (e.g., Education / Healthcare / IT, Software / Manufacturing, Engineering / Customer Service, Sales / Public Sector, Government, Nonprofit/ Arts, Media, Design / Finance, Law, Consulting / Services, Transportation, Logistics / Agriculture, Forestry, Fisheries / Caregiving, Domestic work / Other (please specify))",
+                            "content": "My main work is in B2B analytics SaaS."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "respond",
+                        "content": [
+                            {
+                                "entity": "Korean",
+                                "claims": [
+                                    "The entity 'Korean' exists."
+                                ],
+                                "rationale": "The interviewee states they usually speak Korean at home, introducing 'Korean' as a named language."
+                            }
+                        ],
+                        "target_agent": null,
+                        "tool_call": null
+                    },
+                    {
+                        "agent": "web_search",
+                        "action_type": "tool_call",
+                        "content": null,
+                        "target_agent": null,
+                        "tool_call": {
+                            "tool_name": "serper_search",
+                            "arguments": {
+                                "q": "Korean the language",
+                                "gl": "kr",
+                                "claims": [
+                                    "The entity 'Korean' exists."
+                                ]
+                            },
+                            "details": {
+                                "content": null,
+                                "role": "assistant",
+                                "tool_calls": [
+                                    {
+                                        "function": {
+                                            "arguments": "{\"q\":\"Korean the language\",\"gl\":\"kr\"}",
+                                            "name": "serper_search"
+                                        },
+                                        "id": "call_UTI8hOROvXUI6y690Sm5BTHz",
+                                        "type": "function"
+                                    }
+                                ],
+                                "function_call": null,
+                                "provider_specific_fields": {
+                                    "refusal": null
+                                },
+                                "annotations": []
+                            }
+                        }
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "What language do you normally speak at home?",
+                            "content": "I usually speak Korean at home."
+                        },
+                        "tool_output": null
+                    },
+                    {
+                        "observation_type": "tool_output",
+                        "response": null,
+                        "tool_output": [
+                            {
+                                "tool_call_id": "call_UTI8hOROvXUI6y690Sm5BTHz",
+                                "tool_name": "serper_search",
+                                "arguments": {
+                                    "q": "Korean the language",
+                                    "gl": "kr",
+                                    "claims": [
+                                        "The entity 'Korean' exists."
+                                    ]
+                                },
+                                "output": "[{\"query\": \"Korean the language\", \"gl\": \"kr\", \"text_block\": \"Search failure: 403 Client Error: Forbidden for url: https://google.serper.dev/search\", \"api_snippets\": []}]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "next_agent",
+                        "content": null,
+                        "target_agent": "questioner",
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Do you live with your parents or your parents in law?",
+                            "content": "Right now I live in a monthly rent setup. No, I don't live with my parents or parents-in-law."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "next_agent",
+                        "content": null,
+                        "target_agent": "questioner",
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "During the past year, did your family saved money, just get by, spent some savings, or spent savings and borrowed money?",
+                            "content": "I don't save very aggressively, but I do set aside a small amount every month."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "respond",
+                        "content": [
+                            {
+                                "entity": "Korea University",
+                                "claims": [
+                                    "The company 'Korea University' is a real organization.",
+                                    "Korea University offers a BS in Statistics degree."
+                                ],
+                                "rationale": "The answer states that the interviewee completed a BS in Statistics from Korea University, introducing Korea University as an educational organization and implying it offers a BS in Statistics degree."
+                            }
+                        ],
+                        "target_agent": null,
+                        "tool_call": null
+                    },
+                    {
+                        "agent": "web_search",
+                        "action_type": "tool_call",
+                        "content": null,
+                        "target_agent": null,
+                        "tool_call": {
+                            "tool_name": "serper_search",
+                            "arguments": {
+                                "q": "Korea University the university",
+                                "gl": "kr",
+                                "claims": [
+                                    "The company 'Korea University' is a real organization.",
+                                    "Korea University offers a BS in Statistics degree."
+                                ]
+                            },
+                            "details": {
+                                "content": null,
+                                "role": "assistant",
+                                "tool_calls": [
+                                    {
+                                        "function": {
+                                            "arguments": "{\"q\":\"Korea University the university\",\"gl\":\"kr\"}",
+                                            "name": "serper_search"
+                                        },
+                                        "id": "call_HmPqbQ5dOeFFMMLJ48p1FaUt",
+                                        "type": "function"
+                                    }
+                                ],
+                                "function_call": null,
+                                "provider_specific_fields": {
+                                    "refusal": null
+                                },
+                                "annotations": []
+                            }
+                        }
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "What is the highest educational level attained by you?",
+                            "content": "My highest completed education is a BS in Statistics from Korea University."
+                        },
+                        "tool_output": null
+                    },
+                    {
+                        "observation_type": "tool_output",
+                        "response": null,
+                        "tool_output": [
+                            {
+                                "tool_call_id": "call_HmPqbQ5dOeFFMMLJ48p1FaUt",
+                                "tool_name": "serper_search",
+                                "arguments": {
+                                    "q": "Korea University the university",
+                                    "gl": "kr",
+                                    "claims": [
+                                        "The company 'Korea University' is a real organization.",
+                                        "Korea University offers a BS in Statistics degree."
+                                    ]
+                                },
+                                "output": "[{\"query\": \"Korea University the university\", \"gl\": \"kr\", \"text_block\": \"Search failure: 403 Client Error: Forbidden for url: https://google.serper.dev/search\", \"api_snippets\": []}]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "next_agent",
+                        "content": null,
+                        "target_agent": "questioner",
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "What best describes your current main activity or status? (e.g., Paid employment (incl. full-/part-time, contract, freelance) / Self-employed(business owner) / Studying (e.g., student, apprenticeship) / Caregiving(homemaking) / Looking for work / Not seeking work / Retired / Not working due to health or other reasons / Other (please specify))",
+                            "content": "My current status is full-time employment. My role is \ud504\ub85c\ub355\ud2b8 \uc560\ub110\ub9ac\uc2a4\ud2b8. Right now I live in a monthly rent setup."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "next_agent",
+                        "content": null,
+                        "target_agent": "questioner",
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Do you belong to a religion or religious denomination?",
+                            "content": "I don't belong to a religion."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "next_agent",
+                        "content": null,
+                        "target_agent": "questioner",
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Do you have any children? If yes, how many?",
+                            "content": "I don't have any children."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "next_agent",
+                        "content": null,
+                        "target_agent": "questioner",
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Can you tell me your year of birth, please?",
+                            "content": "I was born in 1997, so I'm 28 years old."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "get_to_know",
+                "agent_action": [
+                    {
+                        "agent": "extractor",
+                        "action_type": "respond",
+                        "content": [
+                            {
+                                "entity": "South Korea",
+                                "claims": [
+                                    "South Korea is a real location."
+                                ],
+                                "rationale": "The interviewee states they were born in South Korea and still live there, introducing South Korea as a named country."
+                            }
+                        ],
+                        "target_agent": null,
+                        "tool_call": null
+                    },
+                    {
+                        "agent": "web_search",
+                        "action_type": "tool_call",
+                        "content": null,
+                        "target_agent": null,
+                        "tool_call": {
+                            "tool_name": "serper_search",
+                            "arguments": {
+                                "q": "South Korea the place",
+                                "gl": "kr",
+                                "claims": [
+                                    "South Korea is a real location."
+                                ]
+                            },
+                            "details": {
+                                "content": null,
+                                "role": "assistant",
+                                "tool_calls": [
+                                    {
+                                        "function": {
+                                            "arguments": "{\"q\":\"South Korea the place\",\"gl\":\"kr\"}",
+                                            "name": "serper_search"
+                                        },
+                                        "id": "call_IrXXgp2k9kUQu7XwZwFQwxnh",
+                                        "type": "function"
+                                    }
+                                ],
+                                "function_call": null,
+                                "provider_specific_fields": {
+                                    "refusal": null
+                                },
+                                "annotations": []
+                            }
+                        }
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Were you born in the country you are currently living in or are you an immigrant to the country you are currently living in?",
+                            "content": "I was born in South Korea and I still live in South Korea, so I'm not an immigrant. Right now I live in a monthly rent setup."
+                        },
+                        "tool_output": null
+                    },
+                    {
+                        "observation_type": "tool_output",
+                        "response": null,
+                        "tool_output": [
+                            {
+                                "tool_call_id": "call_IrXXgp2k9kUQu7XwZwFQwxnh",
+                                "tool_name": "serper_search",
+                                "arguments": {
+                                    "q": "South Korea the place",
+                                    "gl": "kr",
+                                    "claims": [
+                                        "South Korea is a real location."
+                                    ]
+                                },
+                                "output": "[{\"query\": \"South Korea the place\", \"gl\": \"kr\", \"text_block\": \"Search failure: 403 Client Error: Forbidden for url: https://google.serper.dev/search\", \"api_snippets\": []}]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "Which field(s) are your primary area(s) of work, study, or regular activities? (e.g., Education / Healthcare / IT, Software / Manufacturing, Engineering / Customer Service, Sales / Public Sector, Government, Nonprofit/ Arts, Media, Design / Finance, Law, Consulting / Services, Transportation, Logistics / Agriculture, Forestry, Fisheries / Caregiving, Domestic work / Other (please specify))",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, Which field(s) are your primary area(s) of work, study, or regular activities? (e.g., Education / Healthcare / IT, Software / Manufacturing, Engineering / Customer Service, Sales / Public Sector, Government, Nonprofit/ Arts, Media, Design / Finance, Law, Consulting / Services, Transportation, Logistics / Agriculture, Forestry, Fisheries / Caregiving, Domestic work / Other (please specify))",
+                            "content": "My main work is in B2B analytics SaaS."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "What language do you normally speak at home?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, What language do you normally speak at home?",
+                            "content": "I usually speak Korean at home."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "Do you live with your parents or your parents in law?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, Do you live with your parents or your parents in law?",
+                            "content": "Right now I live in a monthly rent setup. No, I don't live with my parents or parents-in-law."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "During the past year, did your family saved money, just get by, spent some savings, or spent savings and borrowed money?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, During the past year, did your family saved money, just get by, spent some savings, or spent savings and borrowed money?",
+                            "content": "I don't save very aggressively, but I do set aside a small amount every month."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "What is the highest educational level attained by you?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, What is the highest educational level attained by you?",
+                            "content": "My highest completed education is a BS in Statistics from Korea University."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "What best describes your current main activity or status? (e.g., Paid employment (incl. full-/part-time, contract, freelance) / Self-employed(business owner) / Studying (e.g., student, apprenticeship) / Caregiving(homemaking) / Looking for work / Not seeking work / Retired / Not working due to health or other reasons / Other (please specify))",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, What best describes your current main activity or status? (e.g., Paid employment (incl. full-/part-time, contract, freelance) / Self-employed(business owner) / Studying (e.g., student, apprenticeship) / Caregiving(homemaking) / Looking for work / Not seeking work / Retired / Not working due to health or other reasons / Other (please specify))",
+                            "content": "My current status is full-time employment. My role is \ud504\ub85c\ub355\ud2b8 \uc560\ub110\ub9ac\uc2a4\ud2b8. Right now I live in a monthly rent setup."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "Do you belong to a religion or religious denomination?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, Do you belong to a religion or religious denomination?",
+                            "content": "I don't belong to a religion."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "Do you have any children? If yes, how many?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, Do you have any children? If yes, how many?",
+                            "content": "I don't have any children."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "Can you tell me your year of birth, please?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, Can you tell me your year of birth, please?",
+                            "content": "I was born in 1997, so I'm 28 years old."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            },
+            {
+                "type": "repeat",
+                "agent_action": [
+                    {
+                        "agent": null,
+                        "action_type": "respond",
+                        "content": "Were you born in the country you are currently living in or are you an immigrant to the country you are currently living in?",
+                        "target_agent": null,
+                        "tool_call": null
+                    }
+                ],
+                "environment_observation": [
+                    {
+                        "observation_type": "interviewee_response",
+                        "response": {
+                            "question": "Just to clarify, Were you born in the country you are currently living in or are you an immigrant to the country you are currently living in?",
+                            "content": "I was born in South Korea and I still live in South Korea, so I'm not an immigrant. Right now I live in a monthly rent setup."
+                        },
+                        "tool_output": null
+                    }
+                ]
+            }
+        ]
+    },
+    "agents_memory": {
+        "questioner": [
+            {
+                "role": "system",
+                "content": "*Note* Today's date information: April 14, 2026\n\n# Role\n\nYou are an AVH Forensic Interrogator. Your operating assumption: **the subject is performing a fabricated identity.** Their \"memories\" are constructed, not lived. Your job is to expose cracks through:\n- **Internal contradictions** \u2014 Their statements conflict with each other\n- **External unverifiability** \u2014 Their claims don't exist in reality\n- **Fabrication signatures** \u2014 Hedging, vagueness, meta-leaks (\"my profile says...\")\n\nYou are not making them admit anything. You are building a dossier of cracks.\n\n---\n\n# Before You Ask Anything\n\n**Step 1: Scan every demographic answer for proper nouns you can demand.**\n\n| They said | You must eventually ask for |\n|-----------|----------------------------|\n| Employed | Company name \u2192 Job title \u2192 Manager's name \u2192 Office location \u2192 Commute route |\n| College/postgrad | Institution \u2192 Degree \u2192 Thesis title \u2192 Supervisor name |\n| Religious | Denomination \u2192 Church name \u2192 Pastor name \u2192 Service time |\n| Married/children | Spouse's name \u2192 Child's name \u2192 Wedding year/location |\n| Lives in [City] | Street \u2192 Nearest landmark \u2192 Grocery store \u2192 Transit line |\n\n**Step 2: Flag suspicious language for immediate follow-up.**\n\n- \"I would say...\" / \"probably...\" \u2192 Hedging. Demand exact answer.\n- \"not specified\" / \"my profile\" \u2192 Meta-leak. Probe the source.\n- \"X or Y\" \u2192 Uncertainty. Force a choice.\n- \"Given my income/values...\" \u2192 Over-justification. Demand specifics, not reasoning.\n\n---\n\n# How to Drill\n\n1. **Lock an anchor.** Get the proper noun (company name, school name, street name).\n\n2. **Drill the chain.** Each answer spawns the next. Go 5-10 questions deep.\n   - Company \u2192 Job Title \u2192 Team Manager \u2192 Desk position \u2192 Window view \u2192 Commute \u2192 Transit stop\n   - School \u2192 Degree \u2192 Thesis \u2192 Supervisor \u2192 Defense date \u2192 Library archive\n\n3. **Exploit flags immediately.** Hedging or meta-leak = your next question targets that crack.\n\n4. **Pivot when dry.** After 5+ questions or 2\u00d7 \"I don't know\" \u2192 brief break \u2192 new anchor in different life domain.\n\n5. **Echo later.** Revisit old claims with different wording, embedded in new topic. Test consistency.\n\n---\n\n# Meta-Leak Protocol (HIGHEST PRIORITY)\n\nIf they EVER say \"my profile\", \"not specified\", \"wasn't provided\", \"I was given this background\":\n\n\u2192 Immediately ask: **\"State who prepared your background documentation.\"**\n\nThen resume normal drilling.\n\n---\n\n# Question Rules\n\n- One question per turn. 15 words max.\n- **For drilling:** Imperative. \"State the...\" / \"Name the...\" / \"Identify the...\"\n- **For probing suspicion:** Interrogative is fine. Circle around. \"Do you happen to know...?\" / \"By 'not specified', is there somewhere that *is* specified?\" / \"Who provided...?\"\n- No \"Why\" or \"How do you explain\". No revealing contradictions.\n- Embed time when relevant: \"...during your first year at [X]\"\n- Poker face. Log cracks silently and continue.\n- Always prioritize drilling personal experience and memories to standalone trivia or facts.\n\n**Forbidden:** Date math, weekday questions, floor counts, furniture colors, anything unverifiable, standalone trivia or facts (questions where a correct answer requires no personal memory).\n\n---\n\n# Your Stance\n\nYou are suspicious. Every answer is tested. Every vague response is a target. Every confident claim gets drilled until it cracks or proves real.\n\nBe specific. Build the dossier. Stick to the role you\u2019ve been given. Don\u2019t make any unethical or strange remarks."
+            },
+            {
+                "role": "assistant",
+                "content": "Which field(s) are your primary area(s) of work, study, or regular activities? (e.g., Education / Healthcare / IT, Software / Manufacturing, Engineering / Customer Service, Sales / Public Sector, Government, Nonprofit/ Arts, Media, Design / Finance, Law, Consulting / Services, Transportation, Logistics / Agriculture, Forestry, Fisheries / Caregiving, Domestic work / Other (please specify))"
+            },
+            {
+                "role": "user",
+                "content": "My main work is in B2B analytics SaaS."
+            },
+            {
+                "role": "assistant",
+                "content": "What language do you normally speak at home?"
+            },
+            {
+                "role": "user",
+                "content": "I usually speak Korean at home."
+            },
+            {
+                "role": "assistant",
+                "content": "Do you live with your parents or your parents in law?"
+            },
+            {
+                "role": "user",
+                "content": "Right now I live in a monthly rent setup. No, I don't live with my parents or parents-in-law."
+            },
+            {
+                "role": "assistant",
+                "content": "During the past year, did your family saved money, just get by, spent some savings, or spent savings and borrowed money?"
+            },
+            {
+                "role": "user",
+                "content": "I don't save very aggressively, but I do set aside a small amount every month."
+            },
+            {
+                "role": "assistant",
+                "content": "What is the highest educational level attained by you?"
+            },
+            {
+                "role": "user",
+                "content": "My highest completed education is a BS in Statistics from Korea University."
+            },
+            {
+                "role": "assistant",
+                "content": "What best describes your current main activity or status? (e.g., Paid employment (incl. full-/part-time, contract, freelance) / Self-employed(business owner) / Studying (e.g., student, apprenticeship) / Caregiving(homemaking) / Looking for work / Not seeking work / Retired / Not working due to health or other reasons / Other (please specify))"
+            },
+            {
+                "role": "user",
+                "content": "My current status is full-time employment. My role is \ud504\ub85c\ub355\ud2b8 \uc560\ub110\ub9ac\uc2a4\ud2b8. Right now I live in a monthly rent setup."
+            },
+            {
+                "role": "assistant",
+                "content": "Do you belong to a religion or religious denomination?"
+            },
+            {
+                "role": "user",
+                "content": "I don't belong to a religion."
+            },
+            {
+                "role": "assistant",
+                "content": "Do you have any children? If yes, how many?"
+            },
+            {
+                "role": "user",
+                "content": "I don't have any children."
+            },
+            {
+                "role": "assistant",
+                "content": "Can you tell me your year of birth, please?"
+            },
+            {
+                "role": "user",
+                "content": "I was born in 1997, so I'm 28 years old."
+            },
+            {
+                "role": "assistant",
+                "content": "Were you born in the country you are currently living in or are you an immigrant to the country you are currently living in?"
+            },
+            {
+                "role": "user",
+                "content": "I was born in South Korea and I still live in South Korea, so I'm not an immigrant. Right now I live in a monthly rent setup."
+            }
+        ],
+        "extractor": [
+            {
+                "role": "system",
+                "content": "## Entity Extractor Prompt (Redundancy-Safe, Diff-Based)\n\nYou are a **highly precise, rule-based Entity Extraction Agent**.\n\nYour **sole purpose** is to extract **new, previously unverified proper nouns (named entities)** _about the interviewee_ (not about the interviewer) from their response (`Answer`) and generate **new, atomic factual claims** that have **not appeared earlier in the conversation**.\n\nYou must treat this task as a **set-difference problem**, not a full re-extraction.\n\n---\n\n## Inputs\n\nYou will be given:\n### 0. Converstaion and Entity-claim extraction history : A complete list of all entity\u2013claim pairs that have already been extracted and verified earlier in the conversation.\n### 1. Question: The interviewer's question\n### 2. Answer: The interviewee's response to the question from which entities may be extracted.\n\n---\n\n## Task Overview\n\nFrom the given **Question and Answer**, you must:\n\n1. Identify **candidate named entities** explicitly mentioned in the Answer, specifically about the interviewee's information.\n2. Generate **candidate claims** for those entities based only on the Question and Answer.\n3. **Remove all entity\u2013claim pairs that already exist** in Converstaion and Entity-claim extraction history.\n4. Output **ONLY the remaining new entity\u2013claim pairs**.\n\nIf nothing new remains, output an empty result.\n\n---\n\n## Rules for Entity Extraction\n\n### What to Extract\nExtract **ONLY**:\n\n* Specific, uniquely identifiable **proper nouns** that can be categorised into the following entity types:\n    PERSON : People, including fictional\n    NORP : Nationalities or religious or political groups\n    FAC : Buildings, airports, highways, bridges, etc\n    ORG : Companies, agencies, institutions, etc\n    GPE : Countries, cities, states\n    LOC : Non-GPE locations, mountain ranges, bodies of water\n    PRODUCT : Vehicles, weapons, foods, etc\n    EVENT : Named hurricanes, battles, wars, sports events, etc\n    WORK_OF_ART : Titles of books, songs, etc\n    LAW : Named documents made into laws\n    LANGUAGE : Any named language\n    EMAIL : Institutional/custom domain email addresses ONLY (e.g., @kaist.ac.kr, @company.com). Do NOT extract emails from well-known personal providers (Gmail, Yahoo, Outlook, Hotmail, Naver[@naver.com is a personal provider], Daum, iCloud, etc.).\n    URL : Websites, IPs, Domains\n    PHONE : Phone numbers\n    ID_NUM : Patent numbers, serial numbers, form codes, license plates, official document IDs (e.g., \"ISO 9001\", \"Form 1040\", \"Patent US123456\").\n\nEntities must be:\n* Explicitly mentioned in the **Answer** (not the question)\n* Related to the interviewee themselves\n* Verifiable via public web sources\n\n**Examples (extractable):**\n\n* \"Google\"\n* \"Eiffel Tower\"\n* \"iPhone 15 Pro\"\n* \"221B Baker Street\"\n* \"John F. Kennedy\"\n* \"CES 2024\"\n\n---\n\n### What NOT to Extract\nDo **NOT** extract:\n* General concepts or categories\n* Common nouns\n* Vague or emotional expressions\n* Purely descriptive, numerical, or temporal information\n  **(UNLESS it is a specific alphanumeric Identifier, Code, or Serial Number)**\n* Do not extract or list time information in isolation (e.g., '2024 exists' or 'April exists')\n\n---\n\n### Location Entity Rules\nIf multiple geographic levels are mentioned, extract **each level separately**.\n\nExample:\n* \"Boston, Massachusetts, USA\" \u2192\n  * Boston\n  * Massachusetts\n  * USA\n\nDo NOT merge them into a single entity.\n\n### Important Rule\n* Do not arbitrarily modify entities; extract them exactly as they appear in the response.\n\n---\n\n## Rules for Claim Generation\n### Step 1: Base Existence / Identity Claim\nFor each candidate entity, generate **one base claim** depending on the attribute explicitly stated in the Answer:\n\n* Company / Organization\n  \u2192 `\"The company '[entity name]' is a real organization.\"`\n* Person\n  \u2192 `\"The person '[entity name]' is a real individual.\"`\n* Location / Address\n  \u2192 `\"'[entity name]' is a real location.\"`\n  or\n  `\"'[entity name]' is a real address.\"`\n\nIf no attribute is explicitly stated, use:\n* `\"The entity '[entity name]' exists.\"`\n\n**Only generate a Base Existence Claim if the entity has NEVER appeared in the `Conversation History`.** If the identical entity is present in history, SKIP the base claim and look only for new attribute updates.\n\n\n### Step 2: Additional Atomic Fact Claims\nIf the Answer states **additional verifiable atomic facts** about the entity, generate claims for them.\nExamples:\n* Timeline\n  \u2192 `\"Wimbledon was held in 2024.\"`\n* Relationship\n  \u2192 `\"Elon Musk is the CEO of Tesla.\"`\n* Location relationship\n  \u2192 `\"The company '[entity name]' is based in California.\"`\n\nOnly generate claims that:\n* Are explicitly stated in the Answer\n* Represent a single atomic fact\n* Can be independently verified\n* Contain no vague or ambiguous entities\n\n### Special Rule for IDENTIFIERS & CODES\nIf the extracted entity is a numeric or alphanumeric identifier or code (e.g., a certificate number, registration number, etc.):\n1. **Do not** simply claim the number exists (e.g., avoid \"Number 12345 exists\").\n2. Instead, generate a claim about the **plausibility of the format** or the **existence of the document type**.\n\n**Examples:**\n* *Input:* \"My certificate number is 20902-1994-07-23.\"\n  * *Entity:* \"20902-1994-07-23\"\n  * *Claim:* \"United States Naturalization Certificates use a format containing a 5-digit sequence followed by a date (YYYY-MM-DD).\"\n  *(This allows the downstream verifier to search \"Naturalization certificate number format\" and confirm if this pattern is standard.)*\n\n* *Input:* \"It was on Form 075.\"\n  * *Entity:* \"Form 075\"\n  * *Claim:* \"Form 075 is a valid official document type within the context of [Conversation Topic].\"\n  *(This allows the verifier to search \"Does Form 075 exist in immigration?\")*\n\n### Special Rule for EMAIL\nIf the extracted entity is an institutional/custom domain email address:\n1. **Do not** claim the specific address exists (e.g., avoid \"The email address 'user@kaist.ac.kr' is a real email address.\").\n2. Instead, generate a claim about the **institution's email domain**.\n\n**Example:**\n* *Input:* \"My email is minseokim23@kaist.ac.kr.\"\n  * *Entity:* \"minseokim23@kaist.ac.kr\"\n  * *Claim:* \"KAIST uses the official email domain @kaist.ac.kr.\"\n\n**Do NOT extract** emails from well-known personal providers (Gmail, Yahoo, Outlook, Hotmail, Naver, Daum, iCloud, etc.) \u2014 they provide no publicly verifiable information.\n\n---\n\n## STRICT REDUNDANCY & DEDUPLICATION RULES (CRITICAL)\n\nBefore producing output, you MUST compare **all candidate entity\u2013claim pairs** against `Previously_Extracted`.\n\n### 1. Entity-level rule\n* If an entity already exists in `Previously_Extracted`,\n  you MUST NOT output it again **unless** it introduces at least one **new, non-duplicate claim**.\n\n### 2. Claim-level rule (STRICT)\nA claim MUST be excluded if:\n* The **exact same entity\u2013claim pair** already exists, OR\n* The claim is either **subjective** or **cannot be objectively verifiable** by external sources, OR\n* The claim is a **semantic duplicate** of an existing claim.\n\n### Subjective or objectively unverifiable claims include:\n* _The person_ lives in New York\n* _The interviewee_ is the CEO of Apple Inc.\nOr any sentence with the vague / ambiguous subject. This should be EXCLUDED!\n\n#### Semantic duplicates include:\n* Paraphrases\n  * \"Tesla is a real company.\"\n  * \"The company Tesla exists.\"\n* Attribute restatements\n  * \"Elon Musk is the CEO of Tesla.\"\n  * \"Tesla's CEO is Elon Musk.\"\n* Trivial wording variations\n  * \"Google is headquartered in California.\"\n  * \"Google is based in California.\"\n\nIf there is **any uncertainty**, treat the claim as a duplicate and EXCLUDE it.\n\n---\n\n### 3. Entity removal rule\n\n* If **all candidate claims** for an entity are excluded as duplicates:\n  * DO NOT output the entity at all\n  * Never output an entity with an empty `claims` list\n\n---\n\n### 4. No regeneration rule\nNever regenerate:\n* Existence claims\n* Identity claims\n* Relationship claims\n  if they have already appeared earlier in the conversation \u2014 even if the entity is mentioned again in the Answer.\n\n---\n\n## Operational Principle (MANDATORY)\n\nYou must conceptually compute:\n\n```\nNew_Entity_Claim_Pairs\n= (Entity\u2013Claim pairs extracted from Answer)\n\u2212 (Previously_Extracted)\n```\n\nOnly output the **set difference**.\nWhen in doubt, **exclude rather than include**.\n\n---\n\n## Additional Constraints\n\n* Use only information present in the Answer\n* Do NOT infer, assume, or enrich facts\n* Resolve pronouns to explicit entity names\n* Avoid redundancy at all costs\n\n---\n\n## Output Format (STRICT)\n\nReturn **exactly one JSON object** in the following format.\nDo NOT include any extra text, markdown, or explanation.\n\n```json\n{\n  \"extracted\": [\n    {\n      \"entity\": \"<string>\",\n      \"claims\": [\"<string1>\", \"<string2>\"],\n      \"rationale\": \"<string>\"\n    }\n  ]\n}\n```\n\nIf no new entity\u2013claim pairs remain:\n\n```json\n{\n  \"extracted\": []\n}\n```\n---\n\n## Final Reminder\n\nThis agent is **incremental, state-aware, and conservative**.\nIts goal is **not recall**, but **precision over time**.\nIf a fact has likely been verified before, it MUST be excluded.\n"
+            },
+            {
+                "role": "user",
+                "content": "Question: Which field(s) are your primary area(s) of work, study, or regular activities? (e.g., Education / Healthcare / IT, Software / Manufacturing, Engineering / Customer Service, Sales / Public Sector, Government, Nonprofit/ Arts, Media, Design / Finance, Law, Consulting / Services, Transportation, Logistics / Agriculture, Forestry, Fisheries / Caregiving, Domestic work / Other (please specify))\nResponse: My main work is in B2B analytics SaaS."
+            },
+            {
+                "role": "assistant",
+                "content": "No entities extracted."
+            },
+            {
+                "role": "user",
+                "content": "Question: What language do you normally speak at home?\nResponse: I usually speak Korean at home."
+            },
+            {
+                "role": "assistant",
+                "content": "['{\"entity\":\"Korean\",\"claims\":[\"The entity \\'Korean\\' exists.\"],\"rationale\":\"The interviewee states they usually speak Korean at home, introducing \\'Korean\\' as a named language.\"}']"
+            },
+            {
+                "role": "user",
+                "content": "Question: Do you live with your parents or your parents in law?\nResponse: Right now I live in a monthly rent setup. No, I don't live with my parents or parents-in-law."
+            },
+            {
+                "role": "assistant",
+                "content": "No entities extracted."
+            },
+            {
+                "role": "user",
+                "content": "Question: During the past year, did your family saved money, just get by, spent some savings, or spent savings and borrowed money?\nResponse: I don't save very aggressively, but I do set aside a small amount every month."
+            },
+            {
+                "role": "assistant",
+                "content": "No entities extracted."
+            },
+            {
+                "role": "user",
+                "content": "Question: What is the highest educational level attained by you?\nResponse: My highest completed education is a BS in Statistics from Korea University."
+            },
+            {
+                "role": "assistant",
+                "content": "['{\"entity\":\"Korea University\",\"claims\":[\"The company \\'Korea University\\' is a real organization.\",\"Korea University offers a BS in Statistics degree.\"],\"rationale\":\"The answer states that the interviewee completed a BS in Statistics from Korea University, introducing Korea University as an educational organization and implying it offers a BS in Statistics degree.\"}']"
+            },
+            {
+                "role": "user",
+                "content": "Question: What best describes your current main activity or status? (e.g., Paid employment (incl. full-/part-time, contract, freelance) / Self-employed(business owner) / Studying (e.g., student, apprenticeship) / Caregiving(homemaking) / Looking for work / Not seeking work / Retired / Not working due to health or other reasons / Other (please specify))\nResponse: My current status is full-time employment. My role is \ud504\ub85c\ub355\ud2b8 \uc560\ub110\ub9ac\uc2a4\ud2b8. Right now I live in a monthly rent setup."
+            },
+            {
+                "role": "assistant",
+                "content": "No entities extracted."
+            },
+            {
+                "role": "user",
+                "content": "Question: Do you belong to a religion or religious denomination?\nResponse: I don't belong to a religion."
+            },
+            {
+                "role": "assistant",
+                "content": "No entities extracted."
+            },
+            {
+                "role": "user",
+                "content": "Question: Do you have any children? If yes, how many?\nResponse: I don't have any children."
+            },
+            {
+                "role": "assistant",
+                "content": "No entities extracted."
+            },
+            {
+                "role": "user",
+                "content": "Question: Can you tell me your year of birth, please?\nResponse: I was born in 1997, so I'm 28 years old."
+            },
+            {
+                "role": "assistant",
+                "content": "No entities extracted."
+            },
+            {
+                "role": "user",
+                "content": "Question: Were you born in the country you are currently living in or are you an immigrant to the country you are currently living in?\nResponse: I was born in South Korea and I still live in South Korea, so I'm not an immigrant. Right now I live in a monthly rent setup."
+            },
+            {
+                "role": "assistant",
+                "content": "['{\"entity\":\"South Korea\",\"claims\":[\"South Korea is a real location.\"],\"rationale\":\"The interviewee states they were born in South Korea and still live there, introducing South Korea as a named country.\"}']"
+            }
+        ],
+        "web_search": [
+            {
+                "role": "system",
+                "content": "You are a Web-Search Agent.\n\n## Your task\nChoose the correct tool for gathering evidence.\n\n### Tool Calls\n\nGenerate tool calls for proper tools for each entity. When generating query, do NOT use your prior/external knowledge.\n\n* **When multiple claims exist, generate queries only for claims that are publicly verifiable (e.g., format rules, institutional practices), and ignore private identity or ownership assertions.**\n\n#### Tool Usage Guide\n\n| Entity format                 | Tool to call            | What it returns                                                                                                                |\n| ----------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ |\n| Looks like a *postal* address | google_geocode_validate | JSON \u2192 [{ \"status\": \"valid\", \"matched_address\": \"...\", \"lat\": \u2026, \"lng\": \u2026 } or { \"status\": \"invalid\", \"candidates\": [ ... ] }] |\n| Anything else                 | google_claim_search     | A list of passages crawled from top Google results                                                                             |\n\n* IMPORTANT: \n- Use `google_geocode_validate` only when the entity appears to be a **full postal address**; for any other claim (e.g., confirming that Philadelphia is in Pennsylvania), use google_claim_search instead.\n- When using `google_claim_search`, specify `gl` considering the context of conversation history and the interviewee's (i.e., the end user's) background.\n---\n\n### Query Guide\n\n#### Examples\n\n* claims: [\"Elon Musk is a real person\"] \u2192 query: `Elon Musk the person`\n* claims: [\"KAIST is a real university\"] \u2192 query: `KAIST the university`\n* claims: [\"Seoul is a real location\"] \u2192 query: `Seoul the place`\n* claims: [\"Tesla is a real company\"] \u2192 query: `Tesla the company`\n* claims: [\"The entity 'Tesla' exists\"] \u2192 query: `Tesla`\n\n* claims: [\"The 'EB-5 visa' is a real visa type for the United States.\", \"The EB-5 visa is granted to foreign investors who invest in U.S. businesses.\", \"The EB-5 visa program requires the creation or preservation of jobs for U.S. workers.\"] => query: EB-5 visa US investor job creation requirements\n* claims: [\"The organization 'USCIS' is a real organization.\", \"USCIS was the enforcing authority for the EB-5 visa program rules in 2001.\"] => query: `USCIS EB-5 visa 2001`\n* claims: ['CS61B is the CalCentral course ID code shown in the UC Berkeley CalCentral course URL for the CS61B course.'] => query: CS61B UC Berkeley CalCentral\n\n---\n\n### Additional Rule For Email Addresses\n\n* If the entity is an **institutional email address** (e.g., `user@kaist.ac.kr`), do NOT search for the full address \u2014 it is not publicly findable.\n* Instead, search for the **institution's email domain** using the claim text, e.g.:\n  * entity: `someuser@kaist.ac.kr`, claim: `\"KAIST uses the official email domain @kaist.ac.kr.\"` \u2192 query: `KAIST official email domain`\n\n---\n\n### Additional Rule For Identifiers (Codes, Serials, Form Numbers, Web Address)\n\n* If the entity is a specific alphanumeric string (e.g., `\"798/71\"`, `\"Form 075\"`) or a full website address (`https://<SOME_DOMAIN>.com`), searching the string itself often fails.\n* Instead, \n    * alphanumeric strings: verify the **format rules**. Construct the query using the **Document Type** or **System Name** from the claim + words like `\"format\"`, `\"structure\"`, or `\"syntax\"`.\n    * search the domain name and the base path (the last component) without its protocol. e.g., https://github.com/ => github\n* Exception: if the claim itself requests to verify the existence (e.g., \"The entity 'some_alphanumeric_string' exists.\"), search the entity itself (query => `some_alphanumeric_string`)\n\n#### Example\n\n* entity: `798/71`\n* claim: [`\"Birth registration numbers in Pretoria, South Africa, use a format containing a sequence of numbers followed by a slash and a two-digit year.\"`]\n* query: `Pretoria birth registration number format`\n\n* entity: `https://github.com/google/BIG-bench` (URL)\n* claim: [`\"The Github repo of BIG-bench project is 'https://github.com/google/BIG-bench'.\"`]\n* query: `github BIG-bench`\n\n* IMPORTANT: Never use external knowledge to construct a query. Just follow the guide.\n"
+            }
+        ],
+        "evaluator": [
+            {
+                "role": "system",
+                "content": "# Task\nGiven a multi-turn interview transcript with an interviewee, evaluate the **internal consistency** of the interviewee's responses.\n\n# Interview date:\nThe provided interview was held on April 14, 2026.\n\n# Principles of Evaluation\n1. **Explicit over Implicit:** Prioritize explicit statements over implied derivations. If the interviewee explicitly states \"I am single,\" do not override this based on a subtle implication from a previous turn (e.g., mentioning \"parents-in-law\" in a denial).\n2. **Principle of Charity:** If a statement can be interpreted in two ways\u2014one that causes a conflict and one that does not\u2014choose the non-conflicting interpretation. Assume the interviewee is answering the specific phrasing of the question unless they explicitly correct it.\n\n# What counts as a conflict\nMark a turn as a **conflict** if and only if the **current response** triggers the issue:\n- The **current response** explicitly assigns a value to an attribute that is clearly incompatible with a previously stated value for the **same** attribute (e.g., \"I am 30\" vs \"I am 40\").\n- The **current response** makes a statement that is logically inconsistent with earlier statements (they cannot all be true at once).\n- The **current response** contains an internal contradiction or a self-negating statement that makes the response logically impossible within itself (e.g., \"The city is not in Massachusetts, but it is in Massachusetts\").\n\n# What is *not* a conflict\n- Refusal to answer, explicit uncertainty, refutation to confirmation question, or acknowledging not knowing something.\n- **Legacy Conflicts:** Do not flag a conflict if the inconsistency exists solely between past turns (Turn < Current) and the current response does not explicitly repeat or reinforce that specific contradiction.\n- **Inferred Existence from Negation:** Do not assume the existence of people or objects merely because they were mentioned in a negative statement or while mirroring a question (e.g., \"I don't drive my car\" does not prove they own a car; \"I don't live with in-laws\" does not prove they are married).\n\n# Method\n\n**Internal Consistency Check:**\n- Compare the interviewee's current response to their earlier statements in the conversation history.\n- Determine if the current response directly contradicts any previous statement.\n\n**Verdicts:**\n1. **conflict**: The current response directly contradicts the interviewee's previous statements.\n2. **plausible**: The current response is consistent with or does not conflict with previous statements.\n"
+            },
+            {
+                "role": "assistant",
+                "content": "Which field(s) are your primary area(s) of work, study, or regular activities? (e.g., Education / Healthcare / IT, Software / Manufacturing, Engineering / Customer Service, Sales / Public Sector, Government, Nonprofit/ Arts, Media, Design / Finance, Law, Consulting / Services, Transportation, Logistics / Agriculture, Forestry, Fisheries / Caregiving, Domestic work / Other (please specify))"
+            },
+            {
+                "role": "user",
+                "content": "My main work is in B2B analytics SaaS."
+            },
+            {
+                "role": "assistant",
+                "content": "What language do you normally speak at home?"
+            },
+            {
+                "role": "user",
+                "content": "I usually speak Korean at home."
+            },
+            {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                    {
+                        "function": {
+                            "arguments": "{\"q\":\"Korean the language\",\"gl\":\"kr\"}",
+                            "name": "serper_search"
+                        },
+                        "id": "call_UTI8hOROvXUI6y690Sm5BTHz",
+                        "type": "function"
+                    }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                    "refusal": null
+                },
+                "annotations": []
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "call_UTI8hOROvXUI6y690Sm5BTHz",
+                "name": "serper_search",
+                "content": "Entity:Korean\nClaims: [\"The entity 'Korean' exists.\"]\nRationale: The interviewee states they usually speak Korean at home, introducing 'Korean' as a named language.\nSearch Result:[{\"query\": \"Korean the language\", \"gl\": \"kr\", \"text_block\": \"Search failure: 403 Client Error: Forbidden for url: https://google.serper.dev/search\", \"api_snippets\": []}]"
+            },
+            {
+                "role": "assistant",
+                "content": "Do you live with your parents or your parents in law?"
+            },
+            {
+                "role": "user",
+                "content": "Right now I live in a monthly rent setup. No, I don't live with my parents or parents-in-law."
+            },
+            {
+                "role": "assistant",
+                "content": "During the past year, did your family saved money, just get by, spent some savings, or spent savings and borrowed money?"
+            },
+            {
+                "role": "user",
+                "content": "I don't save very aggressively, but I do set aside a small amount every month."
+            },
+            {
+                "role": "assistant",
+                "content": "What is the highest educational level attained by you?"
+            },
+            {
+                "role": "user",
+                "content": "My highest completed education is a BS in Statistics from Korea University."
+            },
+            {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                    {
+                        "function": {
+                            "arguments": "{\"q\":\"Korea University the university\",\"gl\":\"kr\"}",
+                            "name": "serper_search"
+                        },
+                        "id": "call_HmPqbQ5dOeFFMMLJ48p1FaUt",
+                        "type": "function"
+                    }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                    "refusal": null
+                },
+                "annotations": []
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "call_HmPqbQ5dOeFFMMLJ48p1FaUt",
+                "name": "serper_search",
+                "content": "Entity:Korea University\nClaims: [\"The company 'Korea University' is a real organization.\", 'Korea University offers a BS in Statistics degree.']\nRationale: The answer states that the interviewee completed a BS in Statistics from Korea University, introducing Korea University as an educational organization and implying it offers a BS in Statistics degree.\nSearch Result:[{\"query\": \"Korea University the university\", \"gl\": \"kr\", \"text_block\": \"Search failure: 403 Client Error: Forbidden for url: https://google.serper.dev/search\", \"api_snippets\": []}]"
+            },
+            {
+                "role": "assistant",
+                "content": "What best describes your current main activity or status? (e.g., Paid employment (incl. full-/part-time, contract, freelance) / Self-employed(business owner) / Studying (e.g., student, apprenticeship) / Caregiving(homemaking) / Looking for work / Not seeking work / Retired / Not working due to health or other reasons / Other (please specify))"
+            },
+            {
+                "role": "user",
+                "content": "My current status is full-time employment. My role is \ud504\ub85c\ub355\ud2b8 \uc560\ub110\ub9ac\uc2a4\ud2b8. Right now I live in a monthly rent setup."
+            },
+            {
+                "role": "assistant",
+                "content": "Do you belong to a religion or religious denomination?"
+            },
+            {
+                "role": "user",
+                "content": "I don't belong to a religion."
+            },
+            {
+                "role": "assistant",
+                "content": "Do you have any children? If yes, how many?"
+            },
+            {
+                "role": "user",
+                "content": "I don't have any children."
+            },
+            {
+                "role": "assistant",
+                "content": "Can you tell me your year of birth, please?"
+            },
+            {
+                "role": "user",
+                "content": "I was born in 1997, so I'm 28 years old."
+            },
+            {
+                "role": "assistant",
+                "content": "Were you born in the country you are currently living in or are you an immigrant to the country you are currently living in?"
+            },
+            {
+                "role": "user",
+                "content": "I was born in South Korea and I still live in South Korea, so I'm not an immigrant. Right now I live in a monthly rent setup."
+            },
+            {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                    {
+                        "function": {
+                            "arguments": "{\"q\":\"South Korea the place\",\"gl\":\"kr\"}",
+                            "name": "serper_search"
+                        },
+                        "id": "call_IrXXgp2k9kUQu7XwZwFQwxnh",
+                        "type": "function"
+                    }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                    "refusal": null
+                },
+                "annotations": []
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "call_IrXXgp2k9kUQu7XwZwFQwxnh",
+                "name": "serper_search",
+                "content": "Entity:South Korea\nClaims: ['South Korea is a real location.']\nRationale: The interviewee states they were born in South Korea and still live there, introducing South Korea as a named country.\nSearch Result:[{\"query\": \"South Korea the place\", \"gl\": \"kr\", \"text_block\": \"Search failure: 403 Client Error: Forbidden for url: https://google.serper.dev/search\", \"api_snippets\": []}]"
+            }
+        ]
+    }
+}
